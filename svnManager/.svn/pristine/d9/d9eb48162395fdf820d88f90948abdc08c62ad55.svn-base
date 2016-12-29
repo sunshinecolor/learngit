@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>common.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>personal.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>man_user.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>department.css"/>
+</head>
+<body>
+        <?php include_once (BOOT_PATH."/view/header.php");?>
+		<div class="content left">
+			<div class="con_title">
+				<h2>功能及信息列表:</h2>	
+				<div class="search">
+					<input type="text" name="" id="" placeholder="请输入关键字"/>
+					<input type="submit" value="搜索" />
+				</div>
+			</div>		
+			<div class='opreat left'>
+				<button class='all_btn'>所有部门</button>
+				<button class='lost_btn add_btn'>增加部门</button>
+				<button class='lost_btn edit_btn'>编辑部门</button>
+
+			</div>	
+			<div class='user_info left'>
+				<div class="view_bor">
+					<div class="view_all department_view">
+						<table border="1">
+							<tr>
+								<th>部门ID</th>
+								<th>部门名</th>
+								<th>直属部门</th>
+								<th>部门成员</th>
+								<th>删改操作</th>
+							</tr>
+							<tr>
+								<td>1111</td>
+								<td>行政部</td>
+								<td>技术部</td>
+								<td>张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>2222</td>
+								<td>行政部</td>
+								<td>人力部</td>
+								<td>李四，张三，张三，张三，张三，张三，张三，张三，张三</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>后勤部</td>
+								<td>人力部</td>
+								<td>王五，张三，张三，张三，张三</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>运维部</td>
+								<td>行政部</td>
+								<td>王五，张三，张三，张三，张三三，张三，张三，张三，张三，张三，张三</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>行政部</td>
+								<td>管理部</td>
+								<td>王五，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三，张三</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>企划部</td>
+								<td>行政部</td>
+								<td>王五，张三，张三，张三，张三，张三，张三，张三，张三</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+						</table>
+						<ul class='page clearfix'>
+							<li><a class="pre">&lt</a></li>
+							<li><a class='active'>1</a></li>
+							<li><a>2</a></li>
+							<li><a>3</a></li>
+							<li><a>4</a></li>
+							<li><a>...</a></li>
+							<li style="border-right: 1px solid #797979;"><a class="last">&gt</a></li>
+						</ul>
+					</div>					
+					<form action="" method="post" class='hide user_add edit_personal personal_pos'>
+						<label for="dname">部门名:</label>
+						<input type="text" name="dname" id="dname" /><br />
+						<label for="up_dname">直属部门:</label>
+						<input type="text" name="up_dname" id="up_dname" /><br />
+						<label for="authority">部门成员:</label>
+						<div class='user_group'>
+							<input type="checkbox" name="user[]" id="usergrop_team" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+						</div><br />
+						<label for="bz">备注:</label>
+						<textarea name="bz" rows="4" cols="20" id="bz">点击添加备注</textarea>
+						<input type="hidden" name="department" value="add"/>
+						<input type="submit" value="添加"/>
+					</form>
+					<form action="" method="post" class='hide user_edit edit_personal personal_pos'>
+						<label for="did">部门ID:</label>
+						<input type="text" name="did" id="did" /><br />
+						<label for="dname">部门名:</label>
+						<input type="text" name="dname" id="dname" /><br />
+						<label for="up_dname">直属部门:</label>
+						<input type="text" name="up_dname" id="up_dname" /><br />
+						<label for="authority">部门成员:</label>
+						<div class='user_group'>
+							<input type="checkbox" name="user[]"checked="checked" id="usergrop_team" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" checked="checked" id="" /><span class="font_pos">王五</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">张三</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">李四</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">王五</span>
+						</div><br />
+						<input type="hidden" name="department" value="alert"/>
+						<input type="submit" value="修改"/>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<b>Copyright©2016</b>
+		<span>深圳市金飞捷科技有限公司</span>
+		AII Rights Reserved.
+	</footer>
+	<script src="<?php echo __JS__; ?>jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo __JS__; ?>common.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>

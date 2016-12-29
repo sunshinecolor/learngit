@@ -1,0 +1,71 @@
+li .manuser_list a{
+	width: 75%;
+	border-top: 1px solid #797979;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	position: relative;
+	left: 25%;
+	top: 0;
+}
+.opreat{
+	width: 20%;
+}
+.opreat button{
+	display: block;
+	margin: 80px auto;
+}
+.auth_opreat button{
+	margin: 120px auto;
+}
+.user_info{
+	width: 75%;
+	margin-left: 2%;
+}
+.view_bor{
+	border: 1px solid #797979;
+	margin: 50px auto 0 auto;
+	min-height: 530px;
+	border-radius: 10px;
+}
+.view_all{
+	width: 90%;
+	margin: 30px auto 0px auto;
+	font-size: 14px;	
+}
+.view_all table{
+	margin-bottom: 50px;
+	width: 100%;
+}
+.view_all tr{	
+	height: 45px;
+	text-align: center;
+}
+.view_all th{
+	font-size: 16px;
+	font-weight: 400;
+	width: 14%;
+	line-height: 65px;
+}
+.view_all td{
+	font-size: 13px;
+	line-height: 22px;
+}
+form{
+	position: relative;
+	padding-bottom: 100px;
+	margin-bottom: 0;
+}
+.user_add input[type='submit']{
+	position: absolute;
+	bottom: 0;
+	left: 35%;
+}
+.user_authority{
+	display: inline-block;
+	width: 58%;
+}
+.usergrop_team{
+	display: inline-block;
+	width: 58%;
+}

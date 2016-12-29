@@ -1,0 +1,124 @@
+<?php
+include_once ('config/config.php');
+include_once (INCLUDE_PATH."/common.php");
+include_once ('php/postGreSql.php');
+
+
+//personal基本信息查询
+$username = isset($_SESSION['user_name'])?$_SESSION['user_name']:'';
+if(!empty($username)){
+    $res = new postGreSql($db);
+    $personalinfo = $res->table('tb_users')->where("username='{$username}'")->find();
+}
+
+//personal所在组查询
+$personalgroup = $res->table('tb_users as u')
+    ->join('tb_users_ugrps up on u.user_id=up.user_id')
+    ->join('tb_usergroups us on up.group_id=us.group_id')
+    ->field('us.group_name')
+    ->where("u.username='{$username}'")
+    ->select();
+
+
+if($personalinfo['sexes']==2){
+    $sexes = '女';
+}else if($personalinfo['sexes']==1){
+    $sexes = '男';
+}else{
+    $sexes = '保密';
+}
+
+if(isset($_POST['hid']) && $_POST['hid']==1){
+//    $uname = isset($_POST['uname'])?$_POST['uname']:'';
+    $rname = isset($_POST['real_name'])?$_POST['real_name']:'';
+    $sex = isset($_POST['sex'])?$_POST['sex']:'';
+    $phone = isset($_POST['phone'])?$_POST['phone']:'';
+    $email = isset($_POST['email'])?$_POST['email']:'';
+
+//    if($uname==''){
+//        alert('用户名不能为空');
+//        exit;
+//    }
+    if($rname==''){
+        alert('名字不能为空');
+        exit;
+    }
+    if($sex==''){
+        alert('性别不能为空');
+        exit;
+    }
+    if($phone==''){
+        alert('电话号码不能为空');
+        exit;
+    }
+    if($email==''){
+        alert('邮箱不能为空');
+        exit;
+    }
+
+    $data = array(
+//        'username' => $uname,
+        'realname' => $rname,
+        'sexes'    => $sex,
+        'phone'    => $phone,
+        'email'    => $email
+    );
+
+    $return = $res->table('tb_users')->where("username='{$username}'")->save($data);
+    if($return){
+        alert('信息修改成功','personal.php');
+        exit;
+    }else{
+        alert('信息修改失败，请重试或者联系管理员');
+        exit;
+    }
+
+}
+
+if(isset($_POST['hid']) && $_POST['hid']==2){
+    $old_pass = isset($_POST['old_pass'])?$_POST['old_pass']:'';
+    $new_pass = isset($_POST['new_pass'])?$_POST['new_pass']:'';
+    $check_pass   = isset($_POST['check_pass'])?$_POST['check_pass']:'';
+
+    if($old_pass==''){
+        alert('旧密码不能为空');
+        exit;
+    }
+    if($new_pass==''){
+        alert('新密码不能为空');
+        exit;
+    }
+    if($check_pass==''){
+        alert('确认密码不能为空');
+        exit;
+    }
+
+    if($new_pass != $check_pass){
+        alert('两次输入密码不一致，请重输');
+        exit;
+    }
+
+    $pw = $res->table('tb_users')->field('password')->where("username='{$username}'")->find();
+    if($pw['password'] != md5(md5($old_pass))){
+        alert('旧密码输入错误，请重输');
+        exit;
+    }
+
+    $data = array(
+        'password' => md5(md5($new_pass))
+    );
+
+    $return = $res->table('tb_users')->where("username='{$username}'")->save($data);
+    if($return){
+        alert('密码修改成功','personal.php');
+        exit;
+    }else{
+        alert('密码修改失败，请重试或者联系管理员');
+        exit;
+    }
+
+}
+
+
+
+include_once ('view/personal.php');

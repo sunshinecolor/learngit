@@ -1,0 +1,20 @@
+<?php
+
+
+function alert($msg,$url=''){
+    if($url){
+        echo "<script>alert('{$msg}');location.href='{$url}'</script>";
+    }else{
+        echo "<script>alert('{$msg}');window.history.back();</script>";
+    }
+
+}
+
+function dump($du){
+    echo'<pre>';
+    print_r($du);
+    echo'</pre>';
+}
+
+
+

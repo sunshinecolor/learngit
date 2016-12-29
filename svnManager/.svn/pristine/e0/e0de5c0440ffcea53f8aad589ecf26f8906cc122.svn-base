@@ -1,0 +1,78 @@
+.con_left{
+	width:75%;
+	position: relative;
+}
+.con_right{
+	width:20%;
+	position: relative;
+}
+.personal_pos{
+	margin: 40px 0 115px 0;
+	margin-left: 20%;
+}
+.con_left ul li{
+	width: 60%;
+	
+}
+.con_left ul li span{
+	display: inline-block;
+	font-size: 14px;
+	line-height: 32px;
+	width: 220px;	
+}
+.basic_edit{
+	position: absolute;
+	bottom: 0;
+	left:10%;
+}
+.pass_edit{
+	position: absolute;
+	bottom: 0;
+	right: 32%;
+}
+.wbasic_edit{
+	background: #999;
+	position: absolute;
+	top: 50px;
+	left: 0;
+}
+.edit_personal label{
+	display: inline-block;
+	font-size: 14px;
+	line-height: 42px;
+	width: 180px;	
+}	
+.edit_personal input[type='text'],.edit_personal input[type='password']{
+	height: 24px;
+	line-height: 24px;
+	width: 58%;
+}
+.edit_personal select{
+	height: 28px;
+	line-height: 28px;
+	width: 58.5%;
+}
+.edit_personal textarea{
+	line-height: 24px;
+	width: 58.5%;
+}
+.edit_personal input[type='submit']{
+	position: absolute;
+	bottom: 0;
+	left: 40%;
+}
+.edit_personal input[type='checkbox']{
+	font-size: 13px;
+	margin: 10px 2px 0 0 ;
+}
+.font_pos{
+	position: relative;
+	top: -2px;
+	font-size: 14px;
+	margin-right: 15px;
+	display: inline-block;	
+}
+.user_group{
+	display: inline-block;
+	width: 54%;
+}

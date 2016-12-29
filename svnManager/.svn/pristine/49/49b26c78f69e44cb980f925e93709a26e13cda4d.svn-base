@@ -1,0 +1,28 @@
+<?php
+include_once ('config/config.php');
+include_once (INCLUDE_PATH."/common.php");
+include_once ('php/postGreSql.php');
+$res = new postGreSql($db);
+if($_POST){
+
+    echo json_encode(array('status'=>111));
+    /*$deparData = $res->table('tb_departments d')->order('order_no')->select();
+    foreach($deparData as $k=>$v){
+        $users = $res->table('tb_departments d')->field('u.username')->join('tb_users u on u.department_id = d.department_id')->where('d.department_id = '.$v['department_id'])->select();
+        $parent_name = $res->table('tb_departments d')->field('d.department_name')->where('d.department_id = '.$v['parent_id'])->select();
+        unset($deparData[$k]['parent_id']);
+        $str = '';
+        if(!empty($users)){
+            foreach($users as $val){
+                $str.=$val['username'].', ';
+            }
+            $str = substr($str,0,strlen($str)-2);
+        }
+        $deparData[$k]['parent_name'] = $parent_name[0]['department_name'];
+        $deparData[$k]['users'] = $str;
+    }*/
+}else{
+    echo json_encode(array('status'=>222));
+}
+//var_dump($deparData);
+//include_once ('view/man_department.php');

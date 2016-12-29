@@ -1,0 +1,31 @@
+<?php
+include_once ('../config/config.php');
+include_once (INCLUDE_PATH."/common.php");
+include_once ('./postGreSql.php');
+include_once ('./Page.class.php');
+//include_once ('./Page1.class.php');
+
+echo '查看项目信息</br>';
+$postGreSql = new postGreSql($db);
+$total = $postGreSql->table('tb_projects')->count();
+$page = new Page($total,1);
+//$page1 = new Page($total,1);
+//$show = $page1->show();
+$pro = $postGreSql->table('tb_projects');
+
+$pageInfo = $page->pageInfo($page->page,$page->pageNums);
+$result = $postGreSql->table('tb_projects')->order('order_no desc')->limit($page->start,$page->show)->select();
+var_dump($result);
+echo $pageInfo."</br></br>";
+
+
+echo '修改项目信息</br></br>';
+
+$resData = $_REQUEST;
+
+if(isset($resData['project_id'])){
+    $res = $postGreSql->table('tb_projects')->where('project_id = '.$resData['project_id'])->find();
+    var_dump($res);
+}
+
+

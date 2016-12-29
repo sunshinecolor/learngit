@@ -1,0 +1,74 @@
+.view_all form{
+	position: relative;
+	padding-bottom: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #797979;
+}
+.view_all table{
+	margin-bottom: 50px;
+	width: 100%;
+	border: none;
+}
+label{
+	color: #333;
+}
+th,tr,td{
+	border: none;
+}
+select{
+	margin: 0 20px 0 3px;
+	color: #333;
+	outline: none;
+}
+option{
+	outline: none;
+}
+.man_proa_op{
+	margin-left: 2%;
+	margin-top: 60px;
+	width: 20%;
+	height: 500px;
+}
+.man_proa_op button{
+	width: 120px;
+	height: 30px;
+	line-height: 25px;
+	margin:10px auto;
+	font-size: 14px;
+	background: #999;
+	display: block;
+}
+.man_proa_op button:hover{
+	background: #169BD5;
+}
+.man_proa_op input[type='text']{
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	font-size: 12px;
+	text-indent: 10px;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #999;
+	border-radius: 6px;
+}
+.man_proa_op p{
+	width: 90%;
+	margin: 2px auto;
+	font-size: 12px;
+	text-indent: 10px;
+	height: 24px;
+	line-height: 24px;
+	color: #8c3900;
+}
+.proa_radio{
+	margin: 8px 0;
+	margin-left: 10%;
+}
+.none_data{
+	width: 100%;
+	height: 480px;
+	font-size: 35px;
+	text-align: center;
+	line-height: 480px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="./css/common.css"/>
+</head>
+<body>
+	<header id='header'>
+		<a href="" class='logo'>
+			<img src="./images/logo.png" alt="" />
+		</a>
+		<div class="hea_right right">
+			<a class='login'>欢迎XXX登录</a>
+			<a class='logout'>退出</a>
+		</div>
+	</header>
+	<section class="clearfix">
+		<div class="lnav left">
+			<ul>
+				<li><a class="lost" href="index.html">首页</a></li>
+				<li><a class="lost" href="personal.html">个人中心</a></li>
+				<li><a class="active" href="man_wpro.html">全部项目</a></li>
+				<li><a class="disable" href="man_user.html">用户管理</a></li>
+				<li><a class="disable" href="man_department.html">部门管理</a></li>
+				<li><a class="disable" href="man_pro.html">项目管理</a></li>
+				<li class="last_bott"><a class="disable" href="man_authority.html">授权管理</a></li>
+			</ul>
+		</div>
+		<div class="content left">
+			<div class="con_title">
+				<h2>全部项目:</h2>	
+				<div class="search">
+					<input type="text" name="" id="" placeholder="请输入关键字"/>
+					<input type="submit" value="搜索" />
+				</div>
+			</div>	
+			<ul class="wpro_view">
+				<li>
+					<a class='black' href="">
+						<h3>金飞捷OA系统 - v1.0 （项目编号：000005）</h3>
+						<h4>项目路径：</h4><span>/jfj-oa1.0</span><br />
+						<h4>最近更新：</h4><span>/jfj-oa1.0/design/金飞捷oa-v1.0需求说明.docx</span><br />
+						<h4>更新时间：</h4><span>2016-7-19</span>,&nbsp;
+						<h4>更新人：</h4><span>吴燕琴</span>
+						<img src="./images/wpro.jpg"/>
+					</a>					
+				</li>
+				<li>
+					<a class="black" href="">
+						<h3>金飞捷商城- v3.0 （项目编号：000006）</h3>
+						<h4>项目路径：</h4><span>/mcc3.0</span><br />
+						<h4>最近更新：</h4><span>/mcc3.0/design/需求分析配图-v1.0.eddx</span><br />
+						<h4>更新时间：</h4><span>2016-7-19</span>,&nbsp;
+						<h4>更新人：</h4><span>温筠庭</span>
+						<img src="./images/wpro.jpg"/>
+					</a>					
+				</li>
+				<li>
+					<a class="black" href="">
+						<h3>金飞捷门户网站- v1.0 （项目编号：000003）</h3>
+						<h4>项目路径：</h4><span>/jtj-portal</span><br />
+						<h4>最近更新：</h4><span>/jtj-portal/src/web/public/config.inc.php</span><br />
+						<h4>更新时间：</h4><span>2016-7-18</span>,&nbsp;
+						<h4>更新人：</h4><span>张志强</span>
+						<img src="./images/wpro.jpg"/>
+					</a>				
+				</li>
+				<li style="border: none">
+					<ul class='page clearfix'>
+						<li><a class="pre">&lt</a></li>
+						<li><a class='active'>1</a></li>
+						<li><a>2</a></li>
+						<li><a>3</a></li>
+						<li><a>4</a></li>
+						<li><a>...</a></li>
+						<li style="border-right: 1px solid #797979;"><a class="last">&gt</a></li>
+					</ul>
+				</li>
+			</ul>			
+		</div>
+	</section>
+	<footer>
+		<b>Copyright©2016</b>
+		<span>深圳市金飞捷科技有限公司</span>
+		AII Rights Reserved.
+	</footer>
+	<script src="./js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/common.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

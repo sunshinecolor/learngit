@@ -1,0 +1,143 @@
+$(function(){
+	supportPlaceholder='placeholder'in document.createElement('input');
+    placeholder=function(input){
+    	var text = input.attr('placeholder');
+    	defaultValue = input.defaultValue;
+	    if(!defaultValue){
+	    	input.val(text).addClass("phcolor");
+	    }
+	    input.focus(function(){
+	    	if(input.val() == text){ 
+	        	$(this).val("");
+	      	}
+	    }); 
+	    input.blur(function(){ 
+	      	if(input.val() == ""){      
+	        	$(this).val(text).addClass("phcolor");
+	      	}
+	    });
+    	//输入的字符不为灰色
+	    input.keydown(function(){ 
+	      	$(this).removeClass("phcolor");
+	    });
+  	}
+  	pass_placeholder=function(input){
+    	var text = input.attr('placeholder');
+    	defaultValue = input.defaultValue;
+	    if(!defaultValue){
+	    	input.val(text).addClass("phcolor");
+	    }
+	    input.attr('type',"text");
+	    input.attr('val',text);
+	    input.focus(function(){
+	    	if(input.val() == text){ 
+	        	$(this).val("");
+	      	}
+	      	$(this).attr('type',"password");
+	    }); 
+	    input.blur(function(){ 
+	      	if(input.val() == ""){    
+	      		$(this).attr('type',"text");  
+	        	$(this).val(text).addClass("phcolor");
+	      	}
+	    });
+    	//输入的字符不为灰色
+	    input.keydown(function(){ 
+	      	$(this).removeClass("phcolor");
+	    });
+  	}
+  	if(!supportPlaceholder){
+    	$('input').each(function(){
+      		text = $(this).attr("placeholder");
+      		if($(this).attr("type") == "text"){
+        		placeholder($(this));
+      		}
+      		if($(this).attr("type") == "password"){
+        		pass_placeholder($(this));
+            }
+    	});
+    }
+  	$('.lnav li a').hover(function(){
+	  		if($(this).attr("class")=='lost'){
+	  			$(this).removeClass('lost');
+	  			$(this).addClass('pointing');	
+	  		} 			
+  		},function(){
+		  	if($(this).attr("class")=='pointing'){ 			
+		  		$(this).removeClass('pointing');
+		  		$(this).addClass('lost');
+		  	}	
+  	});
+  	$('.page li a').hover(function(){
+	  		if($(this).attr("class")!='active'){
+	  			$(this).addClass('pagepointing');	
+	  		} 			
+  		},function(){
+		  	if($(this).attr("class")=='pagepointing'){ 			
+		  		$(this).removeClass('pagepointing');
+		  	}	
+  	});
+  	$('.basic_edit').click(function(){
+  		$('.personal_all').hide();
+  		$('.edit_personal').show();
+  		$('.edit_pass').hide();
+  		$('.con_right').hide();
+  	});
+  	$('.pass_edit').click(function(){
+  		$('.personal_all').hide();
+  		$('.edit_pass').show();
+  		$('.edit_personale').hide();
+  		$('.con_right').hide();
+  	});
+  	$('.wbasic_edit').click(function(){
+  		$('.personal_all').hide();
+  		$('.edit_personal').show();
+  		$('.edit_pass').hide();
+  		$('.con_right').hide();
+  	});
+  	//操作管理界面button动态效果
+  	$('.opreat button').click(function(){
+  		$(this).siblings('button').addClass('lost_btn');
+  		$(this).removeClass('lost_btn');
+  		$(this).addClass('cur_btn');
+  	});
+  	$('.all_btn').click(function(){
+  		$('.view_all').show();
+  		$('form').hide();	
+  	});
+  	$('.add_btn').click(function(){
+  		$('.view_all').hide();
+  		$('form').hide();
+  		$('.user_add').show();		
+  	});
+  	$('.edit_btn').click(function(){
+		var id = $(this).val();
+		var type = $(this).attr('attr-name');
+		alert(type);
+		$.ajax({
+			url: "departCheck.php",
+			type:'POST',
+			complete :function(){}, //請求完回調的函數，無論成功與失敗都會調用，在success後
+			dataType: 'json',
+			data: {id:id,type:type},
+			error: function() { alert('Ajax request 發生錯誤');},
+			success: function(res) {
+				alert(res.status)
+			}
+		});
+  		$('.view_all').hide();
+  		$('form').hide();
+  		$('.user_edit').show();		
+  	});
+  	$('.del_btn').click(function(){
+		if(confirm('您确定要删除吗？')){
+			alert(111);
+		}
+  	});
+    $('.edit_confirm').click(function(){
+      $('.confirm_style').show();
+    })
+    $('.confirm_style button').click(function(){
+      $('.confirm_style').hide();
+    })
+});

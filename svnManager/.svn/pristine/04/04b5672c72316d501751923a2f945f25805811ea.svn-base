@@ -1,0 +1,68 @@
+body{
+	background: #0591C2;
+	font-family: "微软雅黑";
+}
+h1{
+	width: 513px;
+	font-size: 32px;
+	color: #fff;
+	display: block;
+	margin: 8% auto;
+}
+#login{
+	margin: 8% auto;
+	width: 491px;
+	height: 299px;
+	border: 1px solid #797979;
+	border-radius: 10px;
+	background: url(../images/loginbg.jpg) repeat-x;
+	position: relative;
+}	
+input{
+	font-family: "微软雅黑";
+	outline: none;
+}		
+input[type='text'],input[type='password']{
+	text-indent: 8px;
+	width: 310px;
+	height: 28px;
+	line-height: 28px;		
+	margin: 0px 0px 30px 60px;
+	border: 1px solid #666;
+	border-radius: 2px;
+}		
+input[type='checkbox']{
+	margin: 0 0 0px 60px;
+}
+input[type='text'].uname{
+	margin-top: 50px;
+}
+.keep_pass{
+	font-size: 12px;
+	margin-left: 5px;
+	position: relative;
+	top: -2px;
+}
+input[type='submit']{
+	width: 92px;
+	height: 35px;
+	line-height: 35px;
+	margin: 0 0 0px 60px;
+	border: 1px solid #696969;
+	border-radius: 5px;
+	font-size: 16px;
+	background: none;
+	margin: 35px 0 0 185px;
+	color: #333;
+}
+.lost_pass{
+	position: absolute;
+	bottom: 38px;
+	right: 80px;
+	color: #169BD5;
+	cursor: pointer;
+}
+#login p.hide{
+	width: 150px;
+	float: right;
+}

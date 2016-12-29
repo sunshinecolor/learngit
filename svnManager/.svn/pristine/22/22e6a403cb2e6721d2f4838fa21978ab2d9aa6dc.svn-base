@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>common.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>personal.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo __CSS__; ?>man_user.css"/>
+</head>
+<body>
+	<header id='header'>
+		<a href="" class='logo'>
+			<img src="<?php echo __IMG__; ?>logo.png" alt="" />
+		</a>
+		<div class="hea_right right">
+			<a class='login' >欢迎 <?php echo $username; ?> 登录</a>
+			<a class='logout' href="logout.php">退出</a>
+		</div>
+	</header>
+	<section class="clearfix">
+		<div class="lnav left">
+			<ul>
+				<li><a class="lost" href="index.php">首页</a></li>
+				<li><a class="lost" href="personal.php">个人中心</a></li>
+				<li><a class="lost" href="man_wpro.php">全部项目</a></li>
+				<li class="lnav_man_user">
+					<a class="active" href="man_user.php">用户管理</a>
+					<div class='manuser_list'>
+						<a class="active" href="man_user.php">用户信息</a>
+						<a class="lost" href="man_usergroup.php">用户组信息</a>
+					</div>
+				</li>
+				<li><a class="lost" href="man_department.php">部门管理</a></li>
+				<li><a class="lost" href="man_pro.php">项目管理</a></li>
+				<li class="last_bott"><a class="lost" href="man_authority.php">授权管理</a></li>
+			</ul>
+		</div>
+		<div class="content left">
+			<div class="con_title">
+				<h2>功能及信息列表:</h2>	
+				<div class="search">
+					<input type="text" name="" id="" placeholder="请输入关键字"/>
+					<input type="submit" value="搜索" />
+				</div>
+			</div>		
+			<div class='opreat left'>
+				<button class='all_btn'>所有用户</button>
+				<button class='lost_btn add_btn'>增加用户</button>
+				<button class='lost_btn edit_btn'>编辑用户</button>
+				<button class='lost_btn del_btn'>删除用户</button>
+			</div>	
+			<div class='user_info left'>
+				<div class="view_bor">
+					<div class="view_all">
+						<table border="1">
+							<tr>
+								<th>用户ID</th>
+								<th>用户名</th>
+								<th>姓名</th>
+								<th>权限</th>
+								<th>所属部门</th>
+								<th>用户组</th>
+								<th>删改操作</th>
+							</tr>
+							<tr>
+								<td>1111</td>
+								<td>zhangsan</td>
+								<td>张三</td>
+								<td>用户增、删、改权限，项目增、删、改权限，个人信息管理权限</td>
+								<td>技术部</td>
+								<td>oa项目</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>2222</td>
+								<td>lisi</td>
+								<td>李四</td>
+								<td>普通用户</td>
+								<td>技术部</td>
+								<td>商城项目</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>wangwu</td>
+								<td>王五</td>
+								<td>用户增、删、改权限</td>
+								<td>企划部</td>
+								<td>宣网项目</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>wangwu</td>
+								<td>王五</td>
+								<td>用户增、删、改权限</td>
+								<td>企划部</td>
+								<td>宣网项目</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>wangwu</td>
+								<td>王五</td>
+								<td>用户增、删、改权限</td>
+								<td>企划部</td>
+								<td>宣网项目</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+							<tr>
+								<td>333</td>
+								<td>wangwu</td>
+								<td>王五</td>
+								<td>用户增、删、改权限</td>
+								<td>企划部</td>
+								<td>宣网项目</td>
+								<td><button class="edit_btn">编辑</button><button class="del_btn">删除</button></td>
+							</tr>
+						</table>
+						<ul class='page clearfix'>
+							<li><a class="pre">&lt</a></li>
+							<li><a class='active'>1</a></li>
+							<li><a>2</a></li>
+							<li><a>3</a></li>
+							<li><a>4</a></li>
+							<li><a>...</a></li>
+							<li style="border-right: 1px solid #797979;"><a class="last">&gt</a></li>
+						</ul>
+					</div>					
+					<form action="" method="" class='hide user_add edit_personal personal_pos'>
+						<label for="uname">用户名:</label>
+						<input type="text" name="uname" id="uname" /><br />
+						<label for="real_name">姓名:</label>
+						<input type="text" name="real_name" id="real_name" /><br />
+						<label for="authority">用户权限:</label>
+						<div class='user_authority'>
+							<input type="checkbox" name="user[]" checked="checked" id="authority" /><span class="font_pos">查看用户</span>
+							<input type="checkbox" name="user[]"/><span class="font_pos">添加用户</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">删除用户</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑用户</span>
+							<input type="checkbox" name="user[]" id=""/><span class="font_pos">查看用户组</span>
+							<input type="checkbox" name="user[]" id=''/><span class="font_pos">添加用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">删除用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">增加项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑删除项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">增加目录</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑删除目录</span>
+						</div><br />
+						<label for="">所属部门:</label>
+						<select>
+							<option value="jsb">技术部</option>
+							<option value="rlb">人力部</option>
+							<option value="ywb">运维部</option>
+							<option value="qhb">企划部</option>
+							<option value="hqb">后勤部</option>
+						</select><br />
+						<label for="check">所属用户组:</label>
+						<div class='user_group'>
+							<input type="checkbox" name="user[]" id="check" /><span class="font_pos">oa项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">svn项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">系统管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">用户管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">项目管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">普通用户</span>
+						</div><br />
+						<label for="new_pass">登录密码:</label>
+						<input type="password" name="new_pass" id="new_pass" /><br />
+						<label for="check_pass">确认密码:</label>
+						<input type="password" name="check_pass" id="check_pass" /><br />
+						<label for="bz">备注:</label>
+						<textarea name="bz" rows="4" cols="20" id="bz">点击添加备注</textarea>
+						<input type="submit" value="添加"/>
+					</form>
+					<form action="" method="" class='hide user_edit edit_personal personal_pos'>
+						<label for="uid">用户ID:</label>
+						<input type="text" name="uid" id="uid" /><br />
+						<label for="uname">用户名:</label>
+						<input type="text" name="uname" id="uname" /><br />
+						<label for="real_name">姓名:</label>
+						<input type="text" name="real_name" id="real_name" /><br />
+						<label for="authority">用户权限:</label>
+						<div class='user_authority'>
+							<input type="checkbox" name="user[]" checked="checked" id="authority" /><span class="font_pos">查看用户</span>
+							<input type="checkbox" name="user[]" /><span class="font_pos">添加用户</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">删除用户</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑用户</span>
+							<input type="checkbox" name="user[]" id=""/><span class="font_pos">查看用户组</span>
+							<input type="checkbox" name="user[]" id=''/><span class="font_pos">添加用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">删除用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">增加项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑删除项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">增加目录</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑删除目录</span>
+						</div><br />
+						<label for="">所属部门:</label>
+						<select>
+							<option value="jsb">技术部</option>
+							<option value="rlb">人力部</option>
+							<option value="ywb">运维部</option>
+							<option value="qhb">企划部</option>
+							<option value="hqb">后勤部</option>
+						</select><br />
+						<label for="check">所属用户组:</label>
+						<div class='user_group'>
+							<input type="checkbox" name="user[]" id="check" /><span class="font_pos">oa项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">svn项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">系统管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">用户管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">项目管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">普通用户</span>
+						</div><br />
+						<label for="new_pass">登录密码:</label>
+						<input type="password" name="new_pass" id="new_pass" /><br />
+						<label for="check_pass">确认密码:</label>
+						<input type="password" name="check_pass" id="check_pass" />
+						<input type="submit" value="修改"/>
+					</form>
+					<form action="" method="" class='hide user_del edit_personal personal_pos'>
+						<label for="uid">用户ID:</label>
+						<input type="text" name="uid" id="uid" /><br />
+						<label for="uname">用户名:</label>
+						<input type="text" name="uname" id="uname" /><br />
+						<label for="real_name">姓名:</label>
+						<input type="text" name="real_name" id="real_name" /><br />
+						<label for="authority">权限:</label>
+						<div class='user_authority'>
+							<input type="checkbox" name="user[]" checked="checked" id="authority" /><span class="font_pos">查看用户</span>
+							<input type="checkbox" name="user[]" checked="checked" /><span class="font_pos">添加用户</span>
+							<input type="checkbox" name="user[]" checked="checked" id="" /><span class="font_pos">删除用户</span>
+							<input type="checkbox" name="user[]" checked="checked" id="" /><span class="font_pos">编辑用户</span>
+							<input type="checkbox" name="user[]" id=""/><span class="font_pos">查看用户组</span>
+							<input type="checkbox" name="user[]" id=''/><span class="font_pos">添加用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">删除用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑用户组</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">增加项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑删除项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">增加目录</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">编辑删除目录</span>
+						</div><br />
+						<label for="">所属部门:</label>
+						<select>
+							<option value="jsb">技术部</option>
+							<option value="rlb">人力部</option>
+							<option value="ywb">运维部</option>
+							<option value="qhb">企划部</option>
+							<option value="hqb">后勤部</option>
+						</select><br />
+						<label for="check">所属用户组:</label>
+						<div class='user_group'>
+							<input type="checkbox" name="user[]" id="check" /><span class="font_pos">oa项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">svn项目</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">系统管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">用户管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">项目管理员</span>
+							<input type="checkbox" name="user[]" id="" /><span class="font_pos">普通用户</span>
+						</div><br />
+						<input type="submit" value="删除"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<b>Copyright©2016</b>
+		<span>深圳市金飞捷科技有限公司</span>
+		AII Rights Reserved.
+	</footer>
+	<script src="<?php echo __JS__; ?>jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?php echo __JS__; ?>common.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p,body{
+	padding:0;
+	margin:0;
+}
+body{
+	font:12px "微软雅黑",arial;
+	background:#fff;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+img{
+	border: none;
+}
+table{
+	border-collapse: collapse;
+	border: 1px solid #797979;
+	color: #333;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.hide{
+	display: none;
+}
+.clearfix:after{ 
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden; 
+} 
+.clearfix{ 
+	display:inline-block; 
+} 
+.clearfix{
+	display:block;
+} 
+.phcolor{
+	color:#333;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #333;  
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #333;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #333;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #333;
+}
+button,input[type='submit']{
+	cursor: pointer;
+}
+#header{
+	display: block;
+	width: 100%;
+	height: 84px;
+	background: #0591C2;
+}
+#header .logo{
+	margin-left: 5%;
+}
+.hea_right{
+	margin-right: 6%;
+	position: relative;
+	top: 10px;
+}
+.hea_right a{
+	display: block;
+	margin-right: 35px;
+	float: left;
+	color: #fff;
+	font-size: 16px;
+	line-height: 80px;
+}
+.logout{
+	text-indent: 30px;
+	background: url(../images/off.png) no-repeat left;
+}
+section{
+	margin: 20px 0 20px 0;
+	min-width: 997px;
+	min-height: 770px;
+}
+.disable{
+	color:#666;
+	cursor: default;
+}
+.active{
+	color:#0591C2;
+}
+.lost{
+	color:#333;
+}
+.pointing{
+	color: #fff;
+}
+.lnav{
+	width: 153px;
+	margin-left: 5%;
+}
+.lnav ul{
+	background: #A5DCF0;
+	width: 100%;
+	min-height: 455px;
+	border: 1px solid #797979;
+	border-radius: 10px;
+}
+.lnav ul li{
+	min-height: 64px;
+	line-height: 64px;
+	text-align: center;
+	font-size: 16px;
+	border-bottom: 1px solid #797979;
+}
+.lnav li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.lnav ul li.last_bott{
+	border: none;
+}
+.content{
+	width: 76%;
+	margin-left: 3%;
+	border: 1px solid #797979;
+	min-height: 620px;
+	padding-bottom: 25px;
+}
+.con_title{
+	font-weight: 400;
+	height: 60px;
+	border-bottom: 1px solid #797979;
+	text-indent: 8px;
+	font-size: 16px;
+	position: relative;
+}
+.con_title h2{
+	font-weight: 400;
+	text-indent: 8px;
+	font-size: 16px;
+	padding: 15px 0 8px;
+}
+.search{
+	border: 1px solid #797979;
+	border-radius: 5px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 300px;
+	height: 30px;
+	overflow: hidden;
+}
+.search input[type='submit']{
+	width: 25%;
+	height: 100%;
+	background: #999;
+	color: #fff;
+	float: right;
+	line-height: 28px;
+}
+.search input[type='text']{
+	width: 75%;
+	height: 100%;
+	float: left;
+	border: none;
+	color: #333;
+	outline: none;
+	text-indent: 8px;
+}
+.wpro_view{	
+	width: 90%;	
+	margin: 30px auto;
+}
+.wpro_view li{
+	border: 1px dotted #797979;
+	margin-bottom: 30px;
+	padding: 13px 20px;
+	position: relative;
+}
+.black{
+	color:#000;
+}
+.wpro_view li h3{
+	font-weight: 400;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.wpro_view li h4{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	display: inline-block;
+}
+.wpro_view li span{
+	font-size: 14px;
+	line-height: 24px;
+}
+.wpro_view li img{
+	position: absolute;
+	right: 5%;
+	top: 3%;
+	border: none;
+}
+.page{
+	width: 365px;
+	border: none;
+	margin: 0px auto 20px auto;
+}
+.page li{
+	width:50px;
+	height: 27px;
+	line-height: 27px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #797979;
+	border-right: none;;
+	text-align: center;
+}
+.pre,.last{
+	font-size: 24px;
+	font-weight: 700;
+	color: #169BD5;
+}
+.page li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.pagepointing{
+	color: #169BD5;
+}
+.con_left{
+	width:20%;
+	/*border: 1px solid red;*/
+}
+.con_right{
+	width:70%;
+	/*border: 1px solid black;*/
+}
+button,input[type='submit']{
+	width: 140px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background: #169BD5;
+	border-radius: 5px;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	outline: none;
+}
+.cur_btn{
+	background: #169BD5;
+}
+.lost_btn{
+	background: #999;
+}
+footer{
+	width: 100%;
+	height: 62px;
+	background: #0591C2;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	color: #fff;
+	line-height: 62px;
+	font-size: 14px;
+}
+table button{
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	margin:5px 5px;
+	font-size: 14px;
+	background: #999;
+}
+table button:hover{
+	background: #169BD5;
+}

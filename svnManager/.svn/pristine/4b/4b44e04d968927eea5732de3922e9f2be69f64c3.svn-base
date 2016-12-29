@@ -1,0 +1,49 @@
+<?php
+include_once ('config/config.php');
+include_once (INCLUDE_PATH."/common.php");
+include_once ('php/postGreSql.php');
+
+$res = new postGreSql($db);
+
+//$sql = $res->where('username = cty')->order('user_id asc')->limit(3,4)->getsql();
+
+//$userdate = array(
+//    'username'=>'apple',
+//    'password'=>md5(md5(123456)),
+//    'realname'=>'苹果',
+//    'sexes'=>'1',
+//    'department_id'=>'1',
+//    'create_time'=>date("Y-m-d h:i:s",time()),
+//    'login_time'=>date("Y-m-d h:i:s",time()),
+//    'modify_time'=>date("Y-m-d h:i:s",time()),
+//    'login_count'=>2,
+//    'active'=>'2',
+//    'email'=>'823773695@qq.com',
+//    'phone'=>'13450377856',
+//    'descript'=>'个人资料',
+//    'order_no'=>'8'
+//);
+//echo $add = $res->table('tb_users')->add($userdate);
+
+
+//$userinfo = $res->table('tb_users')->select();
+//$res->getsql();
+//dump($userinfo);
+
+//$delinfo = $res->table('tb_users')->where('order_no=6')->delete();
+//$res->getsql();
+
+
+//
+//$savedate = array(
+//    'realname'=>'苹果',
+//);
+//$save = $res->table('tb_users')->where($savedate)->save();
+//$res->getsql();
+
+
+include_once ('view/index.php');
+
+
+
+
